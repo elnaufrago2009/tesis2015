@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1><strong>Pregunta:</strong>  <%= @pregunta.nombre %></h1>
+<hr>
+
+
+  <% if @pregunta.respuestas.any? %>
+    <ul>
+      <% @pregunta.respuestas.each do |respuesta| %>
+        <li><%= respuesta.nombre %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>None available</p>
+  <% end %>
+
+<hr>
+<%= link_to 'Editar', edit_pregunta_path(@pregunta), class: 'btn btn-default' %>
+<%= link_to 'Regresar', preguntas_path, class: 'btn btn-default' %>

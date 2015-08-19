@@ -1,0 +1,29 @@
+<%= form_for(@elegida) do |f| %>
+  <% if @elegida.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@elegida.errors.count, "error") %> prohibited this elegida from being saved:</h2>
+
+      <ul>
+      <% @elegida.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pregunta_id %><br>
+    <%= f.number_field :pregunta_id %>
+  </div>
+  <div class="field">
+    <%= f.label :respuesta_id %><br>
+    <%= f.number_field :respuesta_id %>
+  </div>
+  <div class="field">
+    <%= f.label :usuario_id %><br>
+    <%= f.number_field :usuario_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

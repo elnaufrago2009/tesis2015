@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pregunta:</strong>
+  <%= @elegida.pregunta_id %>
+</p>
+
+<p>
+  <strong>Respuesta:</strong>
+  <%= @elegida.respuesta_id %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @elegida.usuario_id %>
+</p>
+
+<%= link_to 'Edit', edit_elegida_path(@elegida) %> |
+<%= link_to 'Back', elegidas_path %>

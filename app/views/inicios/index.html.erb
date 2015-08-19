@@ -1,0 +1,33 @@
+<br>
+<div class="">
+	<h2>Encuesta sobre Gemas para mi tesis 2015 :)</h2>
+	<hr>
+<form class="form-inline" action="/inicios/enviado_ok" method="post" id="formulario">
+  <div class="form-group">
+  	<%= text_field_tag 'nombre', nil , class: 'form-control', placeholder: 'Nombre Completo' %>
+  </div>
+
+
+    <br>
+      <br>
+  <%  i = 1 %>
+  <% @preguntas.each do |pregunta| %>
+  	<h3><%= i %>.- <%= pregunta.nombre.html_safe %></h3>  	
+  	<% pregunta.respuestas.each do |respuesta| %>
+  		<label class="checkbox-inline">  		
+  			<%= radio_button_tag "elegidas[#{pregunta.id}]", "#{respuesta.id}", nil, id: "radio_#{pregunta.id}" %> 
+  			<%= respuesta.nombre %>
+  		</label>
+  	<% end %>
+  	<% i = i + 1 %>
+  <% end %>
+
+
+  <br>
+  <br>
+
+  <button type="submit" id="boton_enviar" class="btn btn-primary">Enviar Encuesta</button>
+</form>
+</div>
+  <br>
+  <br>

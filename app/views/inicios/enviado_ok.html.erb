@@ -1,0 +1,11 @@
+<%= params[:nombre] %>
+<br>
+
+<% params[:elegidas].each do |elegida| %>
+	<%= elegida[0] %>
+	<%= elegida[1] %>
+	<br>
+<% end %>
+
+<br>
+<%= debug @usuario_last.id %>

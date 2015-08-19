@@ -1,0 +1,29 @@
+<h1>Listing elegidas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pregunta</th>
+      <th>Respuesta</th>
+      <th>Usuario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @elegidas.each do |elegida| %>
+      <tr>
+        <td><%= elegida.pregunta_id %></td>
+        <td><%= elegida.respuesta_id %></td>
+        <td><%= elegida.usuario_id %></td>
+        <td><%= link_to 'Show', elegida %></td>
+        <td><%= link_to 'Edit', edit_elegida_path(elegida) %></td>
+        <td><%= link_to 'Destroy', elegida, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Elegida', new_elegida_path %>
